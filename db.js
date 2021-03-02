@@ -3,7 +3,7 @@ const { Client } = require('pg') // destructuring Client from pg (otherwise it w
 let DB_URI // creates DB_URI variable and conditionally setting it to two different db's below:
 
 if (process.env.NODE_ENV === 'test') { // two db's, one for testing and one for application
-    DB_URI = 'postgresql://test'
+    DB_URI = 'postgresql://chat_db'
 } else {
     DB_URI = 'postgresql:///chat_db'
 }

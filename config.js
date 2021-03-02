@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 let DB_URI = `postgresql://`
 
 if (process.env.NODE_ENV === "test") {
