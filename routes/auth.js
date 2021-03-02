@@ -42,6 +42,17 @@ router.get('/users', async (req, res, next) => {
   }
 })
 
+router.get('/', async (req, res, next) => {
+  try {
+    const results = await db.query(
+      'SELECT users.username FROM users')
+    const users = results.rows
+    return res.send(users)
+  } catch (e) {
+    return next(e)
+  }
+})
+
 // -- Post Routes --
 
 router.post('/register', async (req, res, next) => {
