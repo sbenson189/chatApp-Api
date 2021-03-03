@@ -9,7 +9,11 @@ if (process.env.NODE_ENV === "test") {
 }
 
 let db = new Client({
-    connectionString: DB_URI // need to give new Client instance a connection point (which we established above)
+    connectionString: DB_URI, // need to give new Client instance a connection point (which we established above)
+    user: "vvrrjrvqxyjjrw",
+    database: "d6r66tmkihoq20",
+    host: "54.84.241.61",
+    ssl: true
 })
 
 db.connect() // db is name of variable established above, we are connecting to it.
