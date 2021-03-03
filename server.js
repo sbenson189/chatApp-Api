@@ -1,7 +1,7 @@
 const app = require('./app');
 
 var server_port = process.env.PORT || process.env.YOUR_PORT || 80;
-var server_host = process.env.HOST || '127.0.0.1:5432';
+var server_host = process.env.HOST || '0.0.0.0';
 console.log("Database_URL", process.env.DATABASE_URL);
 
 app.listen(server_port, server_host, function() {
