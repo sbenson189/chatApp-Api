@@ -13,7 +13,7 @@ let db = new Client({
     user: "vvrrjrvqxyjjrw",
     database: "d6r66tmkihoq20",
     host: "54.84.241.61",
-    ssl: true
+    ssl: false
 })
 
 db.connect() // db is name of variable established above, we are connecting to it.
