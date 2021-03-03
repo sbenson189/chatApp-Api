@@ -1,21 +1,17 @@
 const { Client } = require('pg') // destructuring Client from pg (otherwise it would have to be pg.Client everywhere)
     
-let DB_URI // creates DB_URI variable and conditionally setting it to two different db's below:
+let DB_URI = `postgresql://`
 
-if (process.env.NODE_ENV === 'test') { // two db's, one for testing and one for application
-    DB_URI = 'postgresql://chat_db'
+if (process.env.NODE_ENV === "test") {
+  DB_URI = `${DB_URI}/chat_db`
 } else {
-    DB_URI = 'postgresql:///chat_db'
+  DB_URI = process.env.DATABASE_URL || `${DB_URI}/chat_db`
 }
 
 let db = new Client({
     connectionString: DB_URI // need to give new Client instance a connection point (which we established above)
 })
 
-try {
-    db.connect()
-} catch (error) {
-    console.log(error)
-}
+db.connect() // db is name of variable established above, we are connecting to it.
 
 module.exports = db
