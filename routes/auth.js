@@ -44,9 +44,7 @@ router.get('/users', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    const results = await db.query(
-      'SELECT users.username FROM users')
-    const users = results.rows
+    response.sendStatus(200)
     return res.send(users)
   } catch (e) {
     return next(e)
