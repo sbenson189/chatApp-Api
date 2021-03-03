@@ -1,6 +1,6 @@
 const app = require('./app');
 
-var server_port = process.env.YOUR_PORT || process.env.PORT || 8080;
+var server_port = process.env.PORT || process.env.YOUR_PORT || 8080;
 
 console.log("Database_URL", process.env.DATABASE_URL);
 
