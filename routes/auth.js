@@ -44,8 +44,7 @@ router.get('/users', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    res.sendStatus(200)
-    return res.send(users)
+    return res.sendStatus(200)
   } catch (e) {
     return next(e)
   }
