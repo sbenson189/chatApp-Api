@@ -12,6 +12,10 @@ let db = new Client({
     connectionString: DB_URI // need to give new Client instance a connection point (which we established above)
 })
 
-db.connect() // db is name of variable established above, we are connecting to it.
+try {
+    db.connect()
+} catch (error) {
+    console.log(error)
+}
 
 module.exports = db
