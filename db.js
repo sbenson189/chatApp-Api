@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "test") {
 
 let db = new Client({
     // connectionString: DB_URI, 
-    connectionString: process.env.DATABASE_URL !== undefinded ? process.env.DATABASE_URL : DB_URI,
+    connectionString: process.env.DATABASE_URL !== undefined ? process.env.DATABASE_URL : DB_URI,
     // ssl: false
 })
 
